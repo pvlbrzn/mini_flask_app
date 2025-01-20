@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Привет
+{% endblock %}
+
+{% block body %}
+<main class="px-3">
+    <h1>Добро пожаловать {{ name }}</h1>
+     <p>Текущая дата и время: {{ current_time }}</p>
+</main>
+{% endblock %}

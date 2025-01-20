@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
+from datetime import datetime
 
 '''Создаем объект на основе класса Flask.
 В конструктор передаем имя файла, который будет 
@@ -21,6 +22,15 @@ def about():
 @app.route('/contacts')
 def contacts():
     return render_template("contacts.html")
+
+
+@app.route("/hello/")
+@app.route("/hello/<name>")
+def hello(name=None):
+    if not name:
+        name = "Гость"
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return render_template("hello.html", name=name, current_time=current_time)
 
 
 if __name__ == "__main__":
