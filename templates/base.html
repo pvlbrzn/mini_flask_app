@@ -17,7 +17,7 @@
                 <a class="nav-link fw-bold py-1 px-1 active" aria-current="page" href="/home">Домой</a>
                 <a class="nav-link fw-bold py-1 px-1" href="/about">О нас</a>
                 <a class="nav-link fw-bold py-1 px-1" href="/contacts">Контакты</a>
-                <a class="nav-link fw-bold py-1 px-1" href="/hello">Пользователь</a>
+                <a class="nav-link fw-bold py-1 px-1" href="/users">Пользователи</a>
             </nav>
         </div>
     </header>
@@ -33,5 +33,15 @@
 <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+<script>
+        // Автоматическое скрытие Toast сообщений через 5 секунд
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastElements = document.querySelectorAll('.toast');
+            toastElements.forEach(function (toastElement) {
+                var toast = new bootstrap.Toast(toastElement, { delay: 5000 });
+                toast.show();
+            });
+        });
+</script>
 </body>
 </html>
